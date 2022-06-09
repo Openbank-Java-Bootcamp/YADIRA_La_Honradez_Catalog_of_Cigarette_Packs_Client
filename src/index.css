@@ -1,0 +1,176 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* APP */
+.App {
+  text-align: center;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-bottom: 1px solid #000000a8;
+  background-color: #252526;
+}
+
+.Btn {
+  padding: 4px 15px;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 4px;
+  background-color: rgb(244, 178, 96);
+  font-weight: 600;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.Navbar a {
+  list-style: none;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0px 5px;
+  font-size: 1.2rem;
+  color: rgb(244, 178, 96);
+  font-size: 20px;
+}
+
+/* HOME PAGE */
+.Home-Header {
+  position: relative;
+}
+
+.Home-Header h3 {
+  background-color: #252526;
+  margin-bottom: 0;
+  color: rgb(244, 178, 96);
+  padding-bottom: 30px;
+  margin-top: 0;
+}
+
+.Front {
+  height: 450px;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.Principal-Title {
+  font-family: "DM Serif Display", serif;
+  font-weight: 700;
+  font-size: 300%;
+  margin-top: 30px;
+  background-color: #252526;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: white;
+}
+
+.Paragraph {
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 30px;
+  font-family: "Open Sans", sans-serif;
+  background-color: #252526;
+  margin-top: 0;
+  color: rgb(244, 178, 96);
+}
+
+.Home-Body {
+  display: flex;
+}
+
+.Text-Cards {
+  display: flex;
+  margin-top: 30px;
+  text-align: left;
+  padding-right: 30px;
+  margin-bottom: 30px;
+}
+
+.Image-Text-Card {
+  width: 300px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.Text-Cards h3 {
+  font-family: "DM Serif Display", serif;
+  font-size: 200%;
+}
+
+.Articles-Section {
+  width: 600px;
+  background-color: rgb(244, 178, 96);
+}
+
+/* SIGN UP */
+.Signup-Container {
+  display: flex;
+  justify-content: center;
+}
+
+.Signup {
+  background-color: #252526;
+  border-radius: 6px;
+  margin-top: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 400px;
+  color: #ffffff;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 30px;
+}
+
+.Signup h1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 150%;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 600;
+  color: rgb(244, 178, 96);
+}
+
+.Signup-Form {
+  display: block;
+}
+
+.Signup-Form p {
+  margin-bottom: 0;
+}
+
+.Link-Login {
+  color: rgb(244, 178, 96);
+  font-weight: 600;
+}
+
+.Btn-Submit {
+  padding: 4px 15px;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 4px;
+  background-color: rgb(244, 178, 96);
+  font-weight: 600;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
