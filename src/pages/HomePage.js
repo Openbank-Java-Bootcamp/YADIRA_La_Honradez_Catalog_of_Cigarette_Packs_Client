@@ -35,7 +35,7 @@ export default function HomePage() {
         <div className="Home-Body">
           <div>
             <div className="Text-Cards">
-              <img className="Image-Text-Card" src={entry} alt="front" />
+              <img className="Image-Text-Card" src={entry} alt="entry" />
               <div>
                 <h3>A visit to the Factory</h3>
                 <p>
@@ -60,7 +60,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="Text-Cards">
-              <img className="Image-Text-Card" src={machine} alt="front" />
+              <img className="Image-Text-Card" src={machine} alt="machine" />
               <div>
                 <h3>An Industrial Development Model</h3>
                 <p>
@@ -83,7 +83,7 @@ export default function HomePage() {
               <img
                 className="Image-Text-Card"
                 src={cigarettesPack}
-                alt="front"
+                alt="cigarettesPack"
               />
               <div>
                 <h3>The collectibles: An Advertising Strategy</h3>
@@ -106,6 +106,9 @@ export default function HomePage() {
           </div>
         </div>
       </div>
+      {/*<div className="Video">
+        <video src={video}/>
+      </div>*/}
     </div>
   );
 }
