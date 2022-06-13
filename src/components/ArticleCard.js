@@ -1,8 +1,16 @@
 import axios from "axios";
+import { useContext, useState } from "react";
+import EditArticle from "./EditArticle";
+import { AuthContext } from "../context/auth.context";
 
 const apiURL = "http://localhost:5005/api/articles";
 
 export default function ArticleCard(props) {
+  const { role } = useContext(AuthContext);
+
+  //SHOW EDIT OPTION STATE
+  const [showEditForm, setShowEditForm] = useState(false);
+  const toggleEditForm = () => setShowEditForm(!showEditForm);
 
   //DELETE FUNCTION
   const deleteArticle = () => {
@@ -23,11 +31,21 @@ export default function ArticleCard(props) {
       <h6>{props.article.author.toUpperCase()}</h6>
       <p>{props.article.description}</p>
 
-      {/* IF THE USER IS ADMIN, SHOW MODIFY OPTIONS */}
-      <div className="Modify-Article">
-        <button>MODIFY ARTICLE</button>
-        <button onClick={deleteArticle}>DELETE ARTICLE</button>
-      </div>
+      {/* IF THE USER IS ADMIN, SHOW ADD OPTIONS */}
+      {role === "ADMIN_ROLE" && (
+        <div className="Modify-Article">
+          <button onClick={toggleEditForm}>EDIT</button>
+          <button onClick={deleteArticle}>DELETE</button>
+        </div>
+      )}
+
+      {showEditForm && (
+        <EditArticle
+          article={props.article}
+          refreshArticles={props.handleArticles}
+          toggleEditForm={toggleEditForm}
+        />
+      )}
     </div>
   );
 }

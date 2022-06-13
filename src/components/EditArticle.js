@@ -3,30 +3,27 @@ import axios from "axios";
 
 const apiURL = "http://localhost:5005/api/articles";
 
-export default function AddArticle(props) {
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
-  const [description, setDescription] = useState("");
-  const [link, setLink] = useState("");
+export default function EditArticle(props) {
+  const [title, setTitle] = useState(props.article.title);
+  const [author, setAuthor] = useState(props.article.author);
+  const [description, setDescription] = useState(props.article.description);
+  const [link, setLink] = useState(props.article.link);
+  const [id, setId] = useState(props.article.id);
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const requestBody = { title, author, description, link };
+    const requestBody = { title, author, description, link, id };
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .post(apiURL, requestBody, {
+      .put(`${apiURL}/${id}`, requestBody, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
-        setTitle("");
-        setAuthor("");
-        setDescription("");
-        setLink("");
         props.refreshArticles();
-        props.toggleAddForm();
+        props.toggleEditForm();
       })
       .catch((error) => {
         const errorDescription = error.response.data.errors[0].defaultMessage;
@@ -37,7 +34,7 @@ export default function AddArticle(props) {
   return (
     <div className="Add-Container">
       <div className="Add">
-        <h1>ADD A NEW ARTICLE</h1>
+        <h1>EDIT</h1>
 
         <form className="Add-Form" onSubmit={handleSubmit}>
           <div className="mb-3">
@@ -87,14 +84,14 @@ export default function AddArticle(props) {
 
           <div>
             <button type="submit" className="Btn-Submit">
-              Add Article
+              Save Changes
             </button>
             <button
-              onClick={props.toggleAddForm}
+              onClick={props.toggleEditForm}
               type="submit"
               className="Btn-Submit"
             >
-              Discard
+              Discard Changes
             </button>
           </div>
         </form>

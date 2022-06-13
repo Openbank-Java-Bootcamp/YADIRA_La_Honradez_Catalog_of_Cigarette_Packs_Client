@@ -4,7 +4,7 @@ import axios from "axios";
 
 const API_URL = "http://localhost:5005";
 
-function SignupPage(props) {
+function SignupPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -53,7 +53,7 @@ function SignupPage(props) {
           </div>
 
           <div className="mb-3">
-            <label className="form-label">Password:</label>
+            <label className="form-label Label">Password:</label>
             <input
               type="password"
               name="password"

@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import ArticleCard from "../components/ArticleCard";
 import AddArticle from "../components/AddArticle";
+import { AuthContext } from "../context/auth.context";
 
 const apiURL = "http://localhost:5005/api/articles";
 
 export default function ArticlesPage() {
+  const { role } = useContext(AuthContext);
   const [articles, setArticles] = useState([]);
 
-  //SHOW ADD OPTIONS STATE
+  //SHOW ADD OPTION
   const [showAddForm, setShowAddForm] = useState(false);
-
-  //SHOW ADD FORM
-  const toggleAddForm = () => setShowAddForm(true);
-  console.log(showAddForm);
+  const toggleAddForm = () => setShowAddForm(!showAddForm);
 
   //GET ALL ARTICLES
   const getAllArticles = () => {
@@ -31,15 +30,24 @@ export default function ArticlesPage() {
     getAllArticles();
   }, []);
 
+  console.log(role);
+
   return (
     <div className="Article-Container">
       {/* IF THE USER IS ADMIN, SHOW ADD OPTIONS */}
-      {!showAddForm ? (
-        <button onClik={toggleAddForm} className="Add-Button">
-          ADD A NEW ARTICLE
-        </button>
-      ) : (
-        <AddArticle />
+      {role === "ADMIN_ROLE" && (
+        <>
+          {!showAddForm ? (
+            <button onClick={toggleAddForm} className="Add-Button">
+              ADD A NEW ARTICLE
+            </button>
+          ) : (
+            <AddArticle
+              refreshArticles={getAllArticles}
+              toggleAddForm={toggleAddForm}
+            />
+          )}
+        </>
       )}
 
       {articles.map((article) => (

@@ -54,6 +54,11 @@ code {
   font-size: 20px;
 }
 
+.Navbar span {
+  color: rgb(244, 178, 96);
+  margin-right: 10px;
+}
+
 /* HOME PAGE */
 .Home-Header {
   position: relative;
@@ -165,8 +170,12 @@ code {
   display: block;
 }
 
-.Signup-Form p {
+.Signup-Form .form-label {
   margin-bottom: 0;
+}
+
+.Signup-Form .form-control {
+  margin-bottom: 30px;
 }
 
 .Link-Login {
@@ -270,7 +279,7 @@ code {
 
 /* ARTICLES */
 .Article-Container {
-  padding-top: 90px;
+  padding-top: 80px;
   padding-left: 40px;
   padding-right: 40px;
   padding-bottom: 40px;
@@ -313,7 +322,7 @@ code {
 
 .Add-Button {
   margin-bottom: 40px;
-  margin-top: 15px;
+  margin-top: 40px;
   background-color: #252526;
   border-radius: 4px;
   color: rgb(244, 178, 96);
@@ -321,4 +330,48 @@ code {
   margin-right: 10px;
   font-size: 90%;
   font-weight: 600;
+}
+
+/* ADD */
+.Add-Container {
+  margin-top: -10px;
+}
+
+.Add {
+  background-color: #252526;
+  border-radius: 6px;
+  margin-top: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 600px;
+  color: #ffffff;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 0;
+  margin-bottom: 40px;
+}
+
+.Add h1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 150%;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 600;
+  color: rgb(244, 178, 96);
+}
+
+.Add-Form .form-control {
+  margin-bottom: 30px;
+}
+
+.Add-Form .form-label {
+  margin-bottom: 0;
+}
+
+.Add-Form button {
+  margin-right: 10px;
+}
+
+.Description {
+  height: 130px;
 }
