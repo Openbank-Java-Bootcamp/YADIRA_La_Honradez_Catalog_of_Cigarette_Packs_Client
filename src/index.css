@@ -202,7 +202,8 @@ code {
 }
 
 .Cigarette-Pack-Card {
-  display: block;
+  width: 300px;
+  margin: 0 auto;
 }
 
 .Title {
@@ -213,7 +214,7 @@ code {
 }
 
 .CigPack-Image-Container {
-  height: 300px;
+  height: 200px;
   overflow: hidden;
   margin: 20px;
   margin-bottom: 0;
@@ -233,6 +234,16 @@ code {
 
 .Data {
   margin-bottom: 70px;
+  align-content: center;
+}
+
+.Data p {
+  margin-bottom: 3px;
+}
+
+.CigPack-Details-Link {
+  color: #252526;
+  font-size: 100%;
 }
 
 /* FILTERS */
@@ -374,4 +385,44 @@ code {
 
 .Description {
   height: 130px;
+}
+
+/* COLLECTIONS DETAILS */
+.CigPack-Details-Container {
+  display: flex;
+}
+
+.CigPack-Details-Image {
+  margin-top: 90px;
+  margin-left: 40px;
+  width: 400px;
+}
+
+.CigPack-Details-Data {
+  margin-top: 84px;
+  width: 420px;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.Title-Details {
+font-size: 160%;
+margin-bottom: 5px;
+}
+
+.CigPack-Details-Data strong {
+  font-weight: 700;
+  font-size: 100%;
+}
+
+.CigPack-Details-Data p {
+  margin-bottom: 0;
+}
+
+.Topic-Item {
+  font-size: 85%;
+}
+
+.Description-Details {
+  margin-bottom: 7px;
 }

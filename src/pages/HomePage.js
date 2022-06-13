@@ -13,7 +13,7 @@ export default function HomePage() {
         <h1 className="Principal-Title">
           Royal Cigarette Factory "La Honradez"
         </h1>
-        <h3>CATALOG OF CIGARRTTE PACKS</h3>
+        <h3>CATALOG OF CIGARETTE PACKS</h3>
         <div className="Paragraph">
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse,

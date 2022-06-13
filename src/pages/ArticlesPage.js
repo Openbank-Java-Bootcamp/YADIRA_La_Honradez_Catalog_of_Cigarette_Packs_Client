@@ -30,8 +30,6 @@ export default function ArticlesPage() {
     getAllArticles();
   }, []);
 
-  console.log(role);
-
   return (
     <div className="Article-Container">
       {/* IF THE USER IS ADMIN, SHOW ADD OPTIONS */}

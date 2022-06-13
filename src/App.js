@@ -7,6 +7,7 @@ import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/IsPrivate";
 import CollectionsPage from "./pages/CollectionsPage";
 import ArticlesPage from "./pages/ArticlesPage";
+import CigPackDetailsPage from "./pages/CigPackDetailsPage";
 
 function App() {
   return (
@@ -43,6 +44,15 @@ function App() {
         />
 
         <Route
+          path="/collections/:cigPackId"
+          element={
+            <IsPrivate>
+              <CigPackDetailsPage />
+            </IsPrivate>
+          }
+        />
+
+        <Route
           path="/articles"
           element={
             <IsPrivate>
@@ -50,6 +60,16 @@ function App() {
             </IsPrivate>
           }
         />
+
+        <Route
+          path="*"
+          element={
+           
+              <HomePage />
+        
+          }
+        />
+        
       </Routes>
     </div>
   );

@@ -11,7 +11,7 @@ export default function CollectionsPage() {
   const [serie, setSerie] = useState("");
   const [topic, setTopic] = useState("");
 
-  //ALL CIGARETTE PACKS 
+  //ALL CIGARETTE PACKS
   const getAllCigarettePacks = () => {
     const storedToken = localStorage.getItem("authToken");
 
