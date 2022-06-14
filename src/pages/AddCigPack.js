@@ -18,7 +18,6 @@ export default function AddCigPack(props) {
   //TOPICS
   const [allTopics, setAllTopics] = useState([]);
   const [topics, setTopics] = useState([]);
-  const [checkedTopics, setCheckedTopics] = useState([]);
 
   //NAVIGATE
   const navigate = useNavigate();
@@ -33,8 +32,6 @@ export default function AddCigPack(props) {
       })
       .then((response) => setAllTopics(response.data))
       .catch((error) => console.log(error));
-
-    setCheckedTopics(new Array(allTopics.length).fill(false));
   };
 
   useEffect(() => {
@@ -59,25 +56,18 @@ export default function AddCigPack(props) {
     setLink(btoa(binaryString));
   };
 
-  //HANDLE SELECTED TOPICS
-  const selectTopics = () => {
-    let selectedTopics;
-    checkedTopics.map((item, index) => {
-      if (item === true) {
-        console.log(allTopics[index].name);
-        selectedTopics.push(allTopics[index].name);
-      }
-    });
+  //HANDLE TOPICS
+  const handleCheckedTopic = (name) => {
+    let elems = topics;
+    const elemIndex = elems.findIndex((e) => e === name);
 
-    setTopics(selectedTopics);
-  };
+    if (elemIndex >= 0) {
+      elems = elems.filter((e) => e !== name);
+    } else {
+      elems.push(name);
+    }
 
-  const handleCheckedTopic = (i) => {
-    const updateCheckedTopics = checkedTopics.map((item, index) =>
-      i === index ? !item : item
-    );
-    setCheckedTopics(updateCheckedTopics);
-    selectTopics();
+    setTopics(elems);
   };
 
   //HANDLE ADD CIGARETTE PACK
@@ -93,19 +83,16 @@ export default function AddCigPack(props) {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
-        /*setTitle("");
+        setTitle("");
         setDescription("");
         setLink("");
         setSerieName("");
-        setTopics([]);*/
-        props.refreshCigPacks();
+        setTopics([]);
         navigate("/collections");
       })
       .catch((error) => {
-        /*const errorDescription = error.response.data.message;
-        if (errorDescription) setErrorMessage(errorDescription);*/
-        const errorDes = error.response.data.errors[0].defaultMessage;
-        /*if (errorDes)*/ setErrorMessage(errorDes);
+        const errorDescription = error.response.data.errors[0].defaultMessage;
+        setErrorMessage(errorDescription);
       });
   };
 
@@ -119,7 +106,6 @@ export default function AddCigPack(props) {
             <form
               className="Add-Form"
               onSubmit={handleSubmit}
-              //onChange={(e) => onFormChange(e)}
             >
               <div className="mb-3">
                 <label className="form-label">Title:</label>
@@ -169,8 +155,7 @@ export default function AddCigPack(props) {
                       <li className="List-Item" key={i}>
                         <input
                           type="checkbox"
-                          checked={checkedTopics[i]}
-                          onChange={() => handleCheckedTopic(i)}
+                          onChange={() => handleCheckedTopic(t.name)}
                         />
                         <span>&nbsp;&nbsp;{t.name}</span>
                       </li>

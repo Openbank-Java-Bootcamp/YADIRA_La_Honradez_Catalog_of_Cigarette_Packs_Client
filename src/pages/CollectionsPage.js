@@ -30,52 +30,71 @@ export default function CollectionsPage() {
     getAllCigarettePacks();
   }, []);
 
-  //FILTER BY SERIE TITLE
-  const filterBySerie = () => {
-    const storedToken = localStorage.getItem("authToken");
-    axios
-      .get(`${apiURL}?serieName=${serie}`, {
-        headers: { Authorization: `Bearer ${storedToken}` },
-      })
-      .then((response) => {
-        setCigarettePacks(response.data);
-      })
-      .catch((error) => console.log(error));
+  //FILTERS
+  const filterCigPacks = () => {
+    //Return all cigarette packs
+    if (serie === "" && topic === "") {
+      getAllCigarettePacks();
+    }
+
+    //Filter by Series
+    if (serie !== "" && topic === "") {
+      const filterBySerie = () => {
+        const storedToken = localStorage.getItem("authToken");
+        axios
+          .get(`${apiURL}?serieName=${serie}`, {
+            headers: { Authorization: `Bearer ${storedToken}` },
+          })
+          .then((response) => {
+            setCigarettePacks(response.data);
+          })
+          .catch((error) => console.log(error));
+      };
+    }
+
+    //Filter by Topic
+    if (serie === "" && topic !== "") {
+      const storedToken = localStorage.getItem("authToken");
+      axios
+        .get(`${apiURL}?topic=${topic}`, {
+          headers: { Authorization: `Bearer ${storedToken}` },
+        })
+        .then((reponse) => {
+          setCigarettePacks(reponse.data);
+        })
+        .catch((error) => console.log(error));
+    }
+
+    //Filter by Serie and Topic
+    if (serie !== "" && topic !== "") {
+      const storedToken = localStorage.getItem("authToken");
+      axios
+        .get(`${apiURL}?topic=${topic}&serieName=${serie}`, {
+          headers: { Authorization: `Bearer ${storedToken}` },
+        })
+        .then((reponse) => {
+          setCigarettePacks(reponse.data);
+        })
+        .catch((error) => console.log(error));
+    }
   };
 
   useEffect(() => {
-    filterBySerie();
-  }, [serie]);
-
-  //FILTER BY TOPIC
-  const filterByTopic = () => {
-    const storedToken = localStorage.getItem("authToken");
-    axios
-      .get(`${apiURL}?topic=${topic}`, {
-        headers: { Authorization: `Bearer ${storedToken}` },
-      })
-      .then((reponse) => {
-        setCigarettePacks(reponse.data);
-      })
-      .catch((error) => console.log(error));
-  };
-
-  useEffect(() => {
-    filterByTopic();
-  }, [topic]);
+    filterCigPacks();
+  }, [serie, topic]);
 
   return (
     <div>
       <div className="Filter-Container">
         {/* FILTERED BY SERIE */}
         <div className="Filter">
-          <h3>FILTER BY SERIES</h3>
+          <h3>SELECT A SERIES</h3>
           <SeriesFilter handleChange={(e) => setSerie(e.target.value)} />
         </div>
 
         {/* FILTERED BY TOPIC */}
         <div className="Filter">
-          <h3>FILTER BY TOPIC</h3>
+          <h3>SELECT A TOPIC</h3>
           <TopicFilter handleChange={(e) => setTopic(e.target.value)} />
         </div>
 
@@ -88,8 +107,8 @@ export default function CollectionsPage() {
       <div className="CigPack-Container">
         {/* IF THE USER IS ADMIN, SHOW ADD OPTION */}
         {role === "ADMIN_ROLE" && (
-          <Link to="/collections/addCigPack" >
-            <button className="Btn-Add-CigPack" refreshCigPacks={getAllCigarettePacks}>
+          <Link to="/collections/addCigPack">
+            <button className="Btn-Add-CigPack">
               ADD A NEW CIGARETTE PACK
             </button>
           </Link>
