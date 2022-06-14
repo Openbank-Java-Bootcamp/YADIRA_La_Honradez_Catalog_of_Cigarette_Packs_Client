@@ -42,6 +42,19 @@ code {
   font-weight: 600;
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
+  margin-right: 20px;
+}
+
+.Btn-SignUp {
+  padding: 4px 15px;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 4px;
+  background-color: rgb(244, 178, 96);
+  font-weight: 600;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  margin-right: -15px;
 }
 
 .Navbar a {
@@ -197,6 +210,19 @@ code {
 }
 
 /* CIGARETTE PACK */
+.Btn-Add-CigPack {
+  margin-top: 10px;
+  padding: 4px 15px;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 4px;
+  background-color: rgb(244, 178, 96);
+  font-weight: 600;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 20px;
+}
+
 .CigPack-Container {
   padding-top: 200px;
 }
@@ -281,10 +307,10 @@ code {
   background-color: white;
   margin-top: 25px;
   margin-bottom: 29px;
-  margin-right: 47px;
+  margin-right: 40px;
   margin-left: 40px;
   border-radius: 6px;
-  font-weight: 600;
+  font-weight: 700;
   border: 1px solid #ced4da;
 }
 
@@ -333,7 +359,7 @@ code {
 
 .Add-Button {
   margin-bottom: 40px;
-  margin-top: 40px;
+  margin-top: 20px;
   background-color: #252526;
   border-radius: 4px;
   color: rgb(244, 178, 96);
@@ -343,7 +369,6 @@ code {
   font-weight: 600;
 }
 
-/* ADD */
 .Add-Container {
   margin-top: -10px;
 }
@@ -390,6 +415,7 @@ code {
 /* COLLECTIONS DETAILS */
 .CigPack-Details-Container {
   display: flex;
+  margin: 0 auto;
 }
 
 .CigPack-Details-Image {
@@ -406,8 +432,8 @@ code {
 }
 
 .Title-Details {
-font-size: 160%;
-margin-bottom: 5px;
+  font-size: 160%;
+  margin-bottom: 5px;
 }
 
 .CigPack-Details-Data strong {
@@ -417,12 +443,63 @@ margin-bottom: 5px;
 
 .CigPack-Details-Data p {
   margin-bottom: 0;
+  font-size: 90%;
 }
 
-.Topic-Item {
-  font-size: 85%;
+#Topic-Item {
+  font-size: 80%;
 }
 
 .Description-Details {
-  margin-bottom: 7px;
+  margin-bottom: 5px;
+}
+
+.Buttons-Details {
+  margin-top: 5px;
+  display: flex;
+}
+
+.Buttons-Details button {
+  margin-right: 10px;
+  border-color: #252526;
+}
+
+/* ADD CIGARETTE PACK */
+.Add-CigPack-Container {
+  margin-top: 90px;
+}
+
+.Add-CigPack {
+  width: 300px;
+  margin: 0 auto;
+  background-color: #252526;
+  border-radius: 6px;
+  margin-top: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 600px;
+  color: #ffffff;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 0;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.Add-CigPack h1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 150%;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 600;
+  color: rgb(244, 178, 96);
+}
+
+.List-Item {
+  list-style-type: none;
+}
+
+.Add-CigPack-Container ul {
+  margin-left: -30px;
+  margin-top: 8px;
 }

@@ -66,12 +66,17 @@ function LoginPage() {
             />
           </div>
 
-          <button type="submit" className="Btn-Submit">Login</button>
+          <button type="submit" className="Btn-Submit">
+            Login
+          </button>
         </form>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
 
         <p>Don't have an account yet?</p>
-        <Link className="Link-Login" to={"/signup"}> Sign Up</Link>
+        <Link className="Link-Login" to={"/signup"}>
+          {" "}
+          Sign Up
+        </Link>
       </div>
     </div>
   );

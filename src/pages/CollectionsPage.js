@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import CigarettePackCard from "../components/CigarettePackCard";
 import SeriesFilter from "../components/SeriesFilter";
 import TopicFilter from "../components/TopicFilter";
+import { AuthContext } from "../context/auth.context";
+import AddCigPack from "./AddCigPack";
+import { Link } from "react-router-dom";
 
 const apiURL = "http://localhost:5005/api/cigarette_packs";
 
 export default function CollectionsPage() {
+  const { role } = useContext(AuthContext);
   const [cigarettePacks, setCigarettePacks] = useState([]);
   const [serie, setSerie] = useState("");
   const [topic, setTopic] = useState("");
@@ -14,6 +18,7 @@ export default function CollectionsPage() {
   //ALL CIGARETTE PACKS
   const getAllCigarettePacks = () => {
     const storedToken = localStorage.getItem("authToken");
+    console.log("test");
 
     axios
       .get(apiURL, {
@@ -83,6 +88,15 @@ export default function CollectionsPage() {
       </div>
 
       <div className="CigPack-Container">
+        {/* IF THE USER IS ADMIN, SHOW ADD OPTION */}
+        {role === "ADMIN_ROLE" && (
+          <Link to="/collections/addCigPack">
+            <button className="Btn-Add-CigPack">
+              ADD A NEW CIGARETTE PACK
+            </button>
+          </Link>
+        )}
+
         {cigarettePacks.map((cigarettePack) => (
           <CigarettePackCard
             key={cigarettePack.id}

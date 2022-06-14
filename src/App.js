@@ -8,6 +8,7 @@ import IsPrivate from "./components/IsPrivate";
 import CollectionsPage from "./pages/CollectionsPage";
 import ArticlesPage from "./pages/ArticlesPage";
 import CigPackDetailsPage from "./pages/CigPackDetailsPage";
+import AddCigPack from "./pages/AddCigPack";
 
 function App() {
   return (
@@ -53,6 +54,15 @@ function App() {
         />
 
         <Route
+          path="/collections/addCigPack"
+          element={
+            <IsPrivate>
+              <AddCigPack />
+            </IsPrivate>
+          }
+        />
+
+        <Route
           path="/articles"
           element={
             <IsPrivate>
@@ -61,15 +71,7 @@ function App() {
           }
         />
 
-        <Route
-          path="*"
-          element={
-           
-              <HomePage />
-        
-          }
-        />
-        
+        <Route path="*" element={<HomePage />} />
       </Routes>
     </div>
   );

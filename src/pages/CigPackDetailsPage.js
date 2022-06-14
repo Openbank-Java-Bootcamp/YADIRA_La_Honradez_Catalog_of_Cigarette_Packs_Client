@@ -40,43 +40,51 @@ export default function CigPackDetailsPage() {
     <div>
       <div>
         {cigarettePack ? (
-          <div className="CigPack-Details-Container">
-            <div className="CigPack-Details-Image">
-              <ReactImageMagnify
-                {...{
-                  smallImage: {
-                    isFluidWidth: true,
-                    src: link,
-                  },
-                  largeImage: {
-                    src: link,
-                    width: 1200,
-                    height: 867,
-                  },
-                }}
-              />
-            </div>
-            <div className="CigPack-Details-Data">
-              <h2 className="Title-Details">{cigarettePack.title}</h2>
-              <div className="Description-Details">
-                <p>{cigarettePack.description}</p>
+          <>
+            <div className="CigPack-Details-Container">
+              <div className="CigPack-Details-Image">
+                <ReactImageMagnify
+                  {...{
+                    smallImage: {
+                      isFluidWidth: true,
+                      src: `data:image/png;base64,${link}`,
+                    },
+                    largeImage: {
+                      src: `data:image/png;base64,${link}`,
+                      width: 1200,
+                      height: 867,
+                    },
+                  }}
+                />
               </div>
-              <div className="Description-Details">
+              <div className="CigPack-Details-Data">
+                <h2 className="Title-Details">{cigarettePack.title}</h2>
+                <div className="Description-Details">
+                  <p>{cigarettePack.description}</p>
+                </div>
+                <div className="Description-Details">
+                  <p>
+                    <strong>Series: </strong>
+                    {cigarettePack.serieName}
+                  </p>
+                </div>
                 <p>
-                  <strong>Series: </strong>
-                  {cigarettePack.serieName}
+                  <strong>Topics: </strong>
                 </p>
-              </div>
-              <p>
-                <strong>Topics: </strong>
-              </p>
-              <div>
-                {topics.map((t) => (
-                  <p className="Topic-Item">{t}</p>
-                ))}
+                <div>
+                  {topics.map((t) => (
+                    <p id="Topic-Item">{t}</p>
+                  ))}
+                </div>
+                {role === "ADMIN_ROLE" && (
+                  <div className="Buttons-Details">
+                    <button className="Btn-Submit">EDIT</button>
+                    <button className="Btn-Submit">DELETE</button>
+                  </div>
+                )}
               </div>
             </div>
-          </div>
+          </>
         ) : (
           <>
             <HomePage />

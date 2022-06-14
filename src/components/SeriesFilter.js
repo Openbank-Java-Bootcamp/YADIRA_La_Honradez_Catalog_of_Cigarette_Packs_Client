@@ -26,6 +26,7 @@ export default function SeriesFilter({ handleChange }) {
       className="form-control"
       onChange={handleChange}
     >
+      <option value=""></option>
       {series.map((s) => (
         <option key={s.id} value={s.titleS}>
           {s.titleS}

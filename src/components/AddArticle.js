@@ -29,8 +29,10 @@ export default function AddArticle(props) {
         props.toggleAddForm();
       })
       .catch((error) => {
-        const errorDescription = error.response.data.errors[0].defaultMessage;
-        setErrorMessage(errorDescription);
+        const errorDescription = error.response.data.message;
+        if (errorDescription) setErrorMessage(errorDescription);
+        const errorDes = error.response.data.errors[0].defaultMessage;
+        if(errorDes) setErrorMessage(errorDes);
       });
   };
 

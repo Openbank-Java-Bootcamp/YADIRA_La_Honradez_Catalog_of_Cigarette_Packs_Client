@@ -30,7 +30,7 @@ function Navbar() {
           </div>
           <div>
             <Link to="/signup">
-              <button className="Btn">Sign Up</button>
+              <button className="Btn-SignUp">Sign Up</button>
             </Link>
             <Link to="/login">
               <button className="Btn">Login</button>

@@ -5,7 +5,10 @@ export default function CigarettePackCard(props) {
   return (
     <div className="Cigarette-Pack-Card">
       <div className="CigPack-Image-Container">
-        <img className="CigPack-Image" src={props.cigarettePack.link} />
+        <img
+          className="CigPack-Image"
+          src={`data:image/png;base64,${props.cigarettePack.link}`}
+        />
       </div>
       <div className="Data">
         <h2 className="Title">

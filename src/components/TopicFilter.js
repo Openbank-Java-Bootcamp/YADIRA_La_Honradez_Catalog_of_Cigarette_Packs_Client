@@ -22,10 +22,8 @@ export default function TopicFilter({ handleChange }) {
   }, []);
 
   return (
-    <select 
-      className="form-control" 
-      onChange={handleChange}
-    >
+    <select className="form-control" onChange={handleChange}>
+      <option value=""></option>
       {topics.map((t) => (
         <option key={t.id} value={t.name}>
           {t.name}
