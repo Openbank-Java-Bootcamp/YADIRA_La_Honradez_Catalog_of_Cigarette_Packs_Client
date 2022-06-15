@@ -32,14 +32,16 @@ export default function CollectionsPage() {
 
   //FILTERS
   const filterCigPacks = () => {
+
     //Return all cigarette packs
     if (serie === "" && topic === "") {
+
       getAllCigarettePacks();
     }
 
     //Filter by Series
     if (serie !== "" && topic === "") {
-      const filterBySerie = () => {
+
         const storedToken = localStorage.getItem("authToken");
         axios
           .get(`${apiURL}?serieName=${serie}`, {
@@ -49,11 +51,11 @@ export default function CollectionsPage() {
             setCigarettePacks(response.data);
           })
           .catch((error) => console.log(error));
-      };
     }
 
     //Filter by Topic
     if (serie === "" && topic !== "") {
+ 
       const storedToken = localStorage.getItem("authToken");
       axios
         .get(`${apiURL}?topic=${topic}`, {
@@ -67,6 +69,7 @@ export default function CollectionsPage() {
 
     //Filter by Serie and Topic
     if (serie !== "" && topic !== "") {
+  
       const storedToken = localStorage.getItem("authToken");
       axios
         .get(`${apiURL}?topic=${topic}&serieName=${serie}`, {
@@ -88,13 +91,13 @@ export default function CollectionsPage() {
       <div className="Filter-Container">
         {/* FILTERED BY SERIE */}
         <div className="Filter">
-          <h3>SELECT A SERIES</h3>
+          <h3>FILTER BY SERIES</h3>
           <SeriesFilter handleChange={(e) => setSerie(e.target.value)} />
         </div>
 
         {/* FILTERED BY TOPIC */}
         <div className="Filter">
-          <h3>SELECT A TOPIC</h3>
+          <h3>FILTER BY TOPIC</h3>
           <TopicFilter handleChange={(e) => setTopic(e.target.value)} />
         </div>
 
