@@ -32,30 +32,26 @@ export default function CollectionsPage() {
 
   //FILTERS
   const filterCigPacks = () => {
-
     //Return all cigarette packs
     if (serie === "" && topic === "") {
-
       getAllCigarettePacks();
     }
 
     //Filter by Series
     if (serie !== "" && topic === "") {
-
-        const storedToken = localStorage.getItem("authToken");
-        axios
-          .get(`${apiURL}?serieName=${serie}`, {
-            headers: { Authorization: `Bearer ${storedToken}` },
-          })
-          .then((response) => {
-            setCigarettePacks(response.data);
-          })
-          .catch((error) => console.log(error));
+      const storedToken = localStorage.getItem("authToken");
+      axios
+        .get(`${apiURL}?serieName=${serie}`, {
+          headers: { Authorization: `Bearer ${storedToken}` },
+        })
+        .then((response) => {
+          setCigarettePacks(response.data);
+        })
+        .catch((error) => console.log(error));
     }
 
     //Filter by Topic
     if (serie === "" && topic !== "") {
- 
       const storedToken = localStorage.getItem("authToken");
       axios
         .get(`${apiURL}?topic=${topic}`, {
@@ -69,7 +65,6 @@ export default function CollectionsPage() {
 
     //Filter by Serie and Topic
     if (serie !== "" && topic !== "") {
-  
       const storedToken = localStorage.getItem("authToken");
       axios
         .get(`${apiURL}?topic=${topic}&serieName=${serie}`, {
@@ -88,7 +83,7 @@ export default function CollectionsPage() {
 
   return (
     <div>
-      <div className="Filter-Container">
+      <div className="FilterContainer">
         {/* FILTERED BY SERIE */}
         <div className="Filter">
           <h3>FILTER BY SERIES</h3>
@@ -102,27 +97,29 @@ export default function CollectionsPage() {
         </div>
 
         {/* SHOW ALL */}
-        <button onClick={getAllCigarettePacks} className="Show-All">
-          SHOW ALL COLLECTION
+        <button onClick={getAllCigarettePacks} className="ShowAll">
+          SHOW ALL
         </button>
       </div>
 
-      <div className="CigPack-Container">
+      <div className="ContainAddButton">
         {/* IF THE USER IS ADMIN, SHOW ADD OPTION */}
         {role === "ADMIN_ROLE" && (
-          <Link to="/collections/addCigPack">
-            <button className="Btn-Add-CigPack">
-              ADD A NEW CIGARETTE PACK
-            </button>
-          </Link>
+          <button className="BtnAddCigPack">
+            <Link to="/collections/addCigPack">• • • &nbsp;ADD A CIGARETTE PACK&nbsp; • • • </Link>
+          </button>
         )}
+      </div>
 
-        {cigarettePacks.map((cigarettePack) => (
-          <CigarettePackCard
-            key={cigarettePack.id}
-            cigarettePack={cigarettePack}
-          />
-        ))}
+      <div className="CigPackContainer">
+        <div className="row">
+          {cigarettePacks.map((cigarettePack) => (
+            <CigarettePackCard
+              key={cigarettePack.id}
+              cigarettePack={cigarettePack}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

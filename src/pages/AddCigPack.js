@@ -3,7 +3,6 @@ import axios from "axios";
 import SeriesFilter from "../components/SeriesFilter";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../context/auth.context";
-import HomePage from "./HomePage";
 
 const apiURL = "http://localhost:5005/api";
 
@@ -98,13 +97,13 @@ export default function AddCigPack(props) {
 
   return (
     <>
-      {role === "ADMIN_ROLE" ? (
-        <div className="Add-CigPack-Container">
-          <div className="Add-CigPack">
-            <h1>ADD A NEW CIGARETTE PACK</h1>
+      {role === "ADMIN_ROLE" && 
+        <div className="AddCigPackContainer">
+          <div className="AddCigPack">
+            <h1>ADD A CIGARETTE PACK</h1>
 
             <form
-              className="Add-Form"
+              className="AddForm"
               onSubmit={handleSubmit}
             >
               <div className="mb-3">
@@ -152,7 +151,7 @@ export default function AddCigPack(props) {
                 <ul>
                   {allTopics.map((t, i) => {
                     return (
-                      <li className="List-Item" key={i}>
+                      <li className="ListItem" key={i}>
                         <input
                           type="checkbox"
                           onChange={() => handleCheckedTopic(t.name)}
@@ -167,22 +166,18 @@ export default function AddCigPack(props) {
               {errorMessage && <p className="error-message">{errorMessage}</p>}
 
               <div>
-                <button type="submit" className="Btn-Submit">
+                <button type="submit" className="BtnSubmit">
                   Add Cigarette Pack
                 </button>
 
                 <Link to="/collections">
-                  <button className="Btn-Submit">Back to Collection</button>
+                  <button className="BtnSubmit">Discard</button>
                 </Link>
               </div>
             </form>
           </div>
         </div>
-      ) : (
-        <>
-          <HomePage />
-        </>
-      )}
+      }
     </>
   );
 }

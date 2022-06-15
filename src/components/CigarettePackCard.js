@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 
 export default function CigarettePackCard(props) {
   return (
-    <div className="Cigarette-Pack-Card">
-      <div className="CigPack-Image-Container">
+    <div className="CigarettePackCard col-xs-12 col-md-6 col-lg-4">
+      <div className="CigPackImageContainer">
         <img
-          className="CigPack-Image"
+          className="CigPackImage"
           src={`data:image/png;base64,${props.cigarettePack.link}`}
         />
       </div>
       <div className="Data">
         <h2 className="Title">
           <Link
-            className="CigPack-Details-Link"
+            className="CigPackDetailsLink"
             to={`/collections/${props.cigarettePack.id}`}
           >
             {props.cigarettePack.title}

@@ -3,7 +3,6 @@ import { useContext, useState } from "react";
 import EditArticle from "./EditArticle";
 import { AuthContext } from "../context/auth.context";
 import Swal from "sweetalert2";
-import entry from "./../images/entry.png";
 
 const apiURL = "http://localhost:5005/api/articles";
 
@@ -23,7 +22,6 @@ export default function ArticleCard(props) {
       showCancelButton: true,
       confirmButtonText: "Yes",
     }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         const storedToken = localStorage.getItem("authToken");
         axios

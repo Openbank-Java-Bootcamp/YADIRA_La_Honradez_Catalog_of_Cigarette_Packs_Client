@@ -86,6 +86,16 @@ export default function HomePage() {
           </div>
           <div>
             <p>
+              In the mid-19th century, José Susini, of Spanish origin, founded
+              the La Honradez cigarette factory in Cuba, in the intramural area
+              of ​​Havana. The technological advances used in it, as well as its
+              extensive advertising work, made it an internationally recognized
+              model of industrial development. During the 1860s and 1880s, this
+              company was in operation, recognized for the extensive production
+              of luxurious collectible packs, today pieces of unparalleled
+              heritage value.
+            </p>
+            <p>
               Like a living museum, the La Honradez factory opened its doors to
               all visitors interested in learning about the manufacturing
               process of cigarettes and their wrappers. One of the series of

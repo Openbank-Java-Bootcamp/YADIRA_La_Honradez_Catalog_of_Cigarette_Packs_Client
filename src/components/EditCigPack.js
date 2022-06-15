@@ -106,10 +106,10 @@ export default function EditCigPack(props) {
   };
 
   return (
-    <div className="Edit-CigPack-Container">
-      <div className="Edit-CigPack">
+    <div className="EditCigPackContainer">
+      <div className="EditCigPack">
         <h1>EDIT</h1>
-        <form className="Add-Form" onSubmit={handleSubmit}>
+        <form className="AddForm" onSubmit={handleSubmit}>
           <div className="mb-3">
             <label className="form-label">Title:</label>
             <input
@@ -153,7 +153,7 @@ export default function EditCigPack(props) {
             <ul>
               {allTopics.map((t, i) => {
                 return (
-                  <li className="List-Item" key={i}>
+                  <li className="ListItem" key={i}>
                     <input
                       type="checkbox"
                       checked={check(t.name)}
@@ -169,16 +169,16 @@ export default function EditCigPack(props) {
           {errorMessage && <p className="error-message">{errorMessage}</p>}
 
           <div>
-            <button type="submit" className="Btn-Submit">
+            <button type="submit" className="BtnSubmit">
               Save Changes
             </button>
 
             <button
               onClick={props.toggleEditForm}
               type="submit"
-              className="Btn-Submit"
+              className="BtnSubmit"
             >
-              Discard Changes
+              Discard
             </button>
           </div>
         </form>

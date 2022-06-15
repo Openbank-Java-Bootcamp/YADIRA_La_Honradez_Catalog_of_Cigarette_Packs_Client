@@ -351,37 +351,94 @@ color: white;
   font-size: 90%;
 }
 
-/* CIGARETTE PACK */
-.Btn-Add-CigPack {
+/* ============================= CIGARETTE PACK ============================ */
+/* -------------------------------- FILTERS -------------------------------- */
+.FilterContainer {
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  margin-top: 40px;
+  background-color: rgb(244, 178, 96);
+  padding-left: 40px;
+  padding-right: 40px;
+  position: fixed;
+  z-index: 90;
+}
+
+.Filter {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-bottom: 20px;
+  width: 37%;
+  text-align: left;
+  margin-right: 20px;
+}
+
+.Filter h3 {
   margin-top: 10px;
+  font-size: 100%;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.ShowAll {
+  width: 26%;
+  background-color: white;
+  margin-top: 55px;
+  margin-bottom: 19px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 90%;
+  border: 1px solid #ced4da;
+}
+
+.ContainAddButton {
+  display: flex;
+  justify-content: left;
+  width: 100%;
+  background-color: rgb(244, 178, 96);
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+  position: fixed;
+  margin-top: 150px;
+  z-index: 90;
+
+}
+
+.BtnAddCigPack {
   padding: 4px 15px;
   font-size: 1rem;
-  text-align: center;
   border-radius: 4px;
-  background-color: rgb(244, 178, 96);
+  background-color: #252526;
   font-weight: 600;
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
-  margin-bottom: 20px;
+  width: 100%;
 }
 
-.CigPack-Container {
-  padding-top: 200px;
+.BtnAddCigPack a {
+  color: rgb(244, 178, 96);
+  text-decoration: none;
+  font-size: 120%;
 }
 
-.Cigarette-Pack-Card {
-  width: 300px;
+.BtnAddCigPack a:hover {
+  color: white;
+}
+
+/* -------------------------------- ALL CIGARETTE PACKS -------------------------------- */
+.CigPackContainer {
+  padding-top: 220px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.CigarettePackCard {
   margin: 0 auto;
 }
 
-.Title {
-  margin-top: 0;
-  padding: 0;
-  font-size: 180%;
-  font-weight: 700;
-}
-
-.CigPack-Image-Container {
+.CigPackImageContainer {
   height: 200px;
   overflow: hidden;
   margin: 20px;
@@ -389,15 +446,23 @@ color: white;
   padding-bottom: 0;
 }
 
-.CigPack-Image {
+.CigPackImage {
   height: 90%;
   transition: 0.5s;
   object-fit: cover;
   margin-bottom: 0;
 }
 
-.CigPack-Image:hover {
+.CigPackImage:hover {
   transform: scale(1.2);
+  z-index: 0;
+}
+
+.Title {
+  margin-top: 0;
+  padding: 0;
+  font-size: 180%;
+  font-weight: 700;
 }
 
 .Data {
@@ -409,158 +474,115 @@ color: white;
   margin-bottom: 3px;
 }
 
-.CigPack-Details-Link {
+.CigPackDetailsLink {
   color: #252526;
   font-size: 100%;
+  text-decoration: none;
 }
 
-/* FILTERS */
-.Filter-Container {
-  display: flex;
-  justify-content: left;
-  position: fixed;
-  width: 100%;
-  z-index: 90;
+.Title a:hover {
+  color: rgb(84, 82, 82);
+}
+
+/* -------------------------------- ADD CIGARETTE PACKS -------------------------------- */
+.AddCigPackContainer {
+  margin-top: 90px;
+}
+
+.AddCigPack {
+  width: 300px;
+  margin: 0 auto;
+  background-color: #252526;
+  border-radius: 6px;
   margin-top: 50px;
-  background-color: rgb(244, 178, 96);
-}
-
-.Filter {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 40px;
-  padding-bottom: 30px;
-  width: 40%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 400px;
+  color: #ffffff;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 0;
+  margin-bottom: 40px;
   text-align: left;
 }
 
-.Filter h3 {
+.AddCigPack h1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 150%;
   margin-top: 10px;
-  font-size: 120%;
-  font-weight: 700;
+  padding-bottom: 10px;
+  font-weight: 600;
+  color: rgb(244, 178, 96);
 }
 
-.form-control {
-  margin-top: 10px;
+.AddCigPackContainer ul {
+  margin-left: -30px;
+  margin-top: 8px;
 }
 
-.Show-All {
-  width: 20%;
-  background-color: white;
-  margin-top: 25px;
-  margin-bottom: 29px;
-  margin-right: 40px;
-  margin-left: 40px;
-  border-radius: 6px;
-  font-weight: 700;
-  border: 1px solid #ced4da;
+.ListItem {
+  list-style-type: none;
 }
 
-
-/* COLLECTIONS DETAILS */
-.CigPack-Details-Container {
+/* -------------------------------- CIGARETTE PACKS DETAILS -------------------------------- */
+.CigPackDetailsContainer {
   display: flex;
   margin: 0 auto;
 }
 
-.CigPack-Details-Image {
+.CigPackDetailsImage {
   margin-top: 90px;
   margin-left: 40px;
   width: 400px;
   margin-bottom: 20px;
 }
 
-.CigPack-Details-Data {
+.CigPackDetailsData {
   margin-top: 84px;
   width: 420px;
   padding-left: 20px;
   text-align: left;
 }
 
-.Title-Details {
+.TitleDetails {
   font-size: 160%;
   margin-bottom: 5px;
 }
 
-.CigPack-Details-Data strong {
+.DescriptionDetails {
+  margin-bottom: 5px;
+}
+
+.CigPackDetailsData strong {
   font-weight: 700;
   font-size: 100%;
 }
 
-.CigPack-Details-Data p {
+.CigPackDetailsData p {
   margin-bottom: 0;
   font-size: 90%;
 }
 
-#Topic-Item {
+#TopicItem {
   font-size: 80%;
 }
 
-.Description-Details {
-  margin-bottom: 5px;
-}
-
-.Buttons-Details {
+.ButtonsDetails {
   margin-top: 5px;
   display: flex;
 }
 
-.Buttons-Details button {
+.ButtonsDetails button {
   margin-right: 10px;
   border-color: #252526;
 }
 
-/* ADD CIGARETTE PACK */
-.Add-CigPack-Container {
-  margin-top: 90px;
-}
-
-.Add-CigPack {
-  width: 300px;
-  margin: 0 auto;
-  background-color: #252526;
-  border-radius: 6px;
-  margin-top: 50px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  width: 600px;
-  color: #ffffff;
-  padding-left: 60px;
-  padding-right: 60px;
-  padding-bottom: 0;
-  margin-bottom: 40px;
-  text-align: left;
-}
-
-.Add-CigPack h1 {
-  font-family: "Open Sans", sans-serif;
-  font-size: 150%;
-  margin-top: 10px;
-  padding-bottom: 10px;
-  font-weight: 600;
-  color: rgb(244, 178, 96);
-}
-
-.List-Item {
-  list-style-type: none;
-}
-
-.Add-CigPack-Container ul {
-  margin-left: -30px;
-  margin-top: 8px;
-}
-
-/* EDIT CIGARETTE PACK */
-.Edit-CigPack-Container {
+/* -------------------------------- EDIT CIGARETTE PACK -------------------------------- */
+.EditCigPackContainer {
   margin-top: -30px;
 }
 
-.Edit-CigPack-Container ul {
-  margin-left: -30px;
-  margin-top: 8px;
-}
-
-.Edit-CigPack {
+.EditCigPack {
   width: 300px;
   background-color: #252526;
   margin-left: 40px;
@@ -568,7 +590,7 @@ color: white;
   margin-top: 50px;
   padding-top: 20px;
   padding-bottom: 20px;
-  width: 600px;
+  width: 400px;
   color: #ffffff;
   padding-left: 60px;
   padding-right: 60px;
@@ -577,11 +599,16 @@ color: white;
   text-align: left;
 }
 
-.Edit-CigPack h1 {
+.EditCigPack h1 {
   font-family: "Open Sans", sans-serif;
   font-size: 150%;
   margin-top: 10px;
   padding-bottom: 10px;
   font-weight: 600;
   color: rgb(244, 178, 96);
+}
+
+.EditCigPackContainer ul {
+  margin-left: -30px;
+  margin-top: 8px;
 }

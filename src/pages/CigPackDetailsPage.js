@@ -5,6 +5,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import ReactImageMagnify from "react-image-magnify";
 import HomePage from "./HomePage";
 import EditCigPack from "../components/EditCigPack";
+import Swal from "sweetalert2";
 
 const apiURL = "http://localhost:5005/api/cigarette_packs";
 
@@ -46,15 +47,26 @@ export default function CigPackDetailsPage() {
 
   //DELETE CIGARETTE PACK
   const deleteCigPack = () => {
-    const storedToken = localStorage.getItem("authToken");
-    axios
-      .delete(`${apiURL}/${cigPackId}`, {
-        headers: { Authorization: `Bearer ${storedToken}` },
-      })
-      .then((response) => {
-        navigate("/collections");
-      })
-      .catch((err) => console.log(err));
+    Swal.fire({
+      icon: "question",
+      background: "#252526",
+      text: "Are you sure to delete?",
+      showCancelButton: true,
+      confirmButtonText: "Yes",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const storedToken = localStorage.getItem("authToken");
+        axios
+          .delete(`${apiURL}/${cigPackId}`, {
+            headers: { Authorization: `Bearer ${storedToken}` },
+          })
+          .then((result) => {
+            Swal.fire("Removed!", "", "success");
+            navigate("/collections");
+          })
+          .catch((err) => console.log(err));
+      }
+    });
   };
 
   return (
@@ -62,8 +74,8 @@ export default function CigPackDetailsPage() {
       <div>
         {cigarettePack ? (
           <>
-            <div className="CigPack-Details-Container">
-              <div className="CigPack-Details-Image">
+            <div className="CigPackDetailsContainer">
+              <div className="CigPackDetailsImage">
                 <ReactImageMagnify
                   {...{
                     smallImage: {
@@ -78,12 +90,12 @@ export default function CigPackDetailsPage() {
                   }}
                 />
               </div>
-              <div className="CigPack-Details-Data">
-                <h2 className="Title-Details">{cigarettePack.title}</h2>
-                <div className="Description-Details">
+              <div className="CigPackDetailsData">
+                <h2 className="TitleDetails">{cigarettePack.title}</h2>
+                <div className="DescriptionDetails">
                   <p>{cigarettePack.description}</p>
                 </div>
-                <div className="Description-Details">
+                <div className="DescriptionDetails">
                   <p>
                     <strong>Series: </strong>
                     {cigarettePack.serieName}
@@ -94,23 +106,21 @@ export default function CigPackDetailsPage() {
                 </p>
                 <div>
                   {topics.map((t, i) => (
-                    <p key={i} id="Topic-Item">
+                    <p key={i} id="TopicItem">
                       {t}
                     </p>
                   ))}
                 </div>
                 {role === "ADMIN_ROLE" && (
-                  <div className="Buttons-Details">
-                    <button onClick={toggleEditForm} className="Btn-Submit">
+                  <div className="ButtonsDetails">
+                    <button onClick={toggleEditForm} className="BtnSubmit">
                       EDIT
                     </button>
-                    <button onClick={deleteCigPack} className="Btn-Submit">
+                    <button onClick={deleteCigPack} className="BtnSubmit">
                       DELETE
                     </button>
                     <Link to="/collections">
-                      <button className="Btn-Submit">
-                        BACK TO COLLECTION
-                      </button>
+                      <button className="BtnSubmit">BACK TO COLLECTION</button>
                     </Link>
                   </div>
                 )}
