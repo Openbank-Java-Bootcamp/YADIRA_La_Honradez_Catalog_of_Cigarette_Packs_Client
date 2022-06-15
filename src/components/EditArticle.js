@@ -32,11 +32,11 @@ export default function EditArticle(props) {
   };
 
   return (
-    <div className="Add-Container">
+    <div className="AddContainer">
       <div className="Add">
         <h1>EDIT</h1>
 
-        <form className="Add-Form" onSubmit={handleSubmit}>
+        <form className="AddForm" onSubmit={handleSubmit}>
           <div className="mb-3">
             <label className="form-label">Title:</label>
             <input
@@ -83,13 +83,13 @@ export default function EditArticle(props) {
           {errorMessage && <p className="error-message">{errorMessage}</p>}
 
           <div>
-            <button type="submit" className="Btn-Submit">
+            <button type="submit" className="BtnSubmit">
               Save Changes
             </button>
             <button
               onClick={props.toggleEditForm}
               type="submit"
-              className="Btn-Submit"
+              className="BtnSubmit"
             >
               Discard Changes
             </button>

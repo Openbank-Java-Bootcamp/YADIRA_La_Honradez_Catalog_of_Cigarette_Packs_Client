@@ -37,11 +37,11 @@ export default function AddArticle(props) {
   };
 
   return (
-    <div className="Add-Container">
+    <div className="AddContainer">
       <div className="Add">
         <h1>ADD A NEW ARTICLE</h1>
 
-        <form className="Add-Form" onSubmit={handleSubmit}>
+        <form className="AddForm" onSubmit={handleSubmit}>
           <div className="mb-3">
             <label className="form-label">Title:</label>
             <input
@@ -88,13 +88,13 @@ export default function AddArticle(props) {
           {errorMessage && <p className="error-message">{errorMessage}</p>}
 
           <div>
-            <button type="submit" className="Btn-Submit">
+            <button type="submit" className="BtnSubmit">
               Add Article
             </button>
             <button
               onClick={props.toggleAddForm}
               type="submit"
-              className="Btn-Submit"
+              className="BtnSubmit"
             >
               Discard
             </button>

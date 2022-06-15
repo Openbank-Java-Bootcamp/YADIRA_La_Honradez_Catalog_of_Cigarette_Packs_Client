@@ -12,12 +12,11 @@ code {
     monospace;
 }
 
-/* APP */
+/* ========================= GENERAL ============================ */
 .App {
   text-align: center;
   min-height: 100vh;
 }
-
 /* ========================== HOME PAGE ============================= */
 .HomeHeader {
   position: relative;
@@ -125,11 +124,13 @@ margin-bottom: 3px;
 text-align: left;
 }
 
-/* NAVBAR */
+.DescriptionWebSite a:hover {
+  color: rgb(84, 82, 82);
+}
+/* ================================== NAVBAR ============================== */
 .Navbar {
   display: flex;
   justify-content: space-between;
-  background: #ffffff;
   padding: 10px 20px;
   font-weight: 600;
   border-bottom: 1px solid #000000a8;
@@ -140,8 +141,12 @@ text-align: left;
   top: 0;
 }
 
+.Auth {
+  margin-right: -20px;
+}
+
 .Btn {
-  padding: 4px 15px;
+  padding: 3px 15px;
   font-size: 1rem;
   text-align: center;
   border-radius: 4px;
@@ -152,8 +157,8 @@ text-align: left;
   margin-right: 20px;
 }
 
-.Btn-SignUp {
-  padding: 4px 15px;
+.BtnSignUp {
+  padding: 3px 15px;
   font-size: 1rem;
   text-align: center;
   border-radius: 4px;
@@ -171,7 +176,11 @@ text-align: left;
   margin: 0px 15px;
   font-size: 1.2rem;
   color: rgb(244, 178, 96);
-  font-size: 20px;
+  font-size: 18px;
+}
+
+.Navbar a:hover {
+color: white;
 }
 
 .Navbar span {
@@ -179,10 +188,8 @@ text-align: left;
   margin-right: 10px;
 }
 
-
-
-/* SIGN UP */
-.Signup-Container {
+/* ========================== SIGN UP =============================== */
+.SignupContainer {
   display: flex;
   justify-content: center;
   margin-top: 60px;
@@ -194,7 +201,7 @@ text-align: left;
   margin-top: 50px;
   padding-top: 20px;
   padding-bottom: 20px;
-  width: 400px;
+  width: 340px;
   color: #ffffff;
   padding-left: 60px;
   padding-right: 60px;
@@ -210,24 +217,24 @@ text-align: left;
   color: rgb(244, 178, 96);
 }
 
-.Signup-Form {
+.SignupForm {
   display: block;
 }
 
-.Signup-Form .form-label {
+.SignupForm .form-label {
   margin-bottom: 0;
 }
 
-.Signup-Form .form-control {
+.SignupForm .form-control {
   margin-bottom: 30px;
 }
 
-.Link-Login {
+.LinkLogin {
   color: rgb(244, 178, 96);
   font-weight: 600;
 }
 
-.Btn-Submit {
+.BtnSubmit {
   padding: 4px 15px;
   font-size: 1rem;
   text-align: center;
@@ -237,7 +244,111 @@ text-align: left;
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
   margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+/* ============================= ARTICLES =============================== */
+.ArticleContainer {
+  padding-top: 80px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  background-color: rgb(244, 178, 96);
+  text-align: left;
+  margin-bottom: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.AddButton {
+  margin-bottom: 40px;
+  margin-top: 20px;
+  background-color: #252526;
+  border-radius: 4px;
+  color: rgb(244, 178, 96);
+  padding: 3px 15px;
+  margin-right: 10px;
+  font-size: 90%;
+  font-weight: 600;
+}
+
+.ArticleCard {
   margin-bottom: 50px;
+}
+
+.ArticleCard a {
+  color: #252526;
+  text-decoration: none;
+  font-size: 100%;
+}
+
+.ArticleCard a:hover {
+  color: rgb(84, 82, 82);
+}
+
+.ArticleCard h2 {
+  font-weight: 600;
+}
+
+.ArticleCard h6 {
+  font-weight: 600;
+}
+
+.ArticleCard p {
+  margin-bottom: 10px;
+}
+
+/* ADD ARTICLE */
+.AddContainer {
+  margin-top: -10px;
+}
+
+.Add {
+  background-color: #252526;
+  border-radius: 6px;
+  margin-top: 50px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 400px;
+  color: #ffffff;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 0;
+  margin-bottom: 40px;
+}
+
+.Add h1 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 150%;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 600;
+  color: rgb(244, 178, 96);
+}
+
+.AddForm .form-control {
+  margin-bottom: 30px;
+}
+
+.AddForm .form-label {
+  margin-bottom: 0;
+}
+
+.AddForm button {
+  margin-right: 10px;
+}
+
+.Description {
+  height: 130px;
+}
+
+/* MODIFY ARTICLE */
+.ModifyArticle button {
+  background-color: #252526;
+  border-radius: 4px;
+  color: rgb(244, 178, 96);
+  padding: 3px 15px;
+  margin-right: 10px;
+  font-size: 90%;
 }
 
 /* CIGARETTE PACK */
@@ -345,108 +456,6 @@ text-align: left;
   border: 1px solid #ced4da;
 }
 
-/* ARTICLES */
-.Article-Container {
-  padding-top: 80px;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 40px;
-  background-color: rgb(244, 178, 96);
-  text-align: left;
-  margin-bottom: 0;
-  font-family: "Open Sans", sans-serif;
-}
-
-.Articles-Section {
-  width: 600px;
-  background-color: rgb(244, 178, 96);
-}
-
-.Article-Card {
-  margin-bottom: 50px;
-}
-
-.Article-Card a {
-  color: #252526;
-  text-decoration: none;
-  font-size: 100%;
-}
-
-.Article-Card h2 {
-  font-weight: 600;
-}
-
-.Article-Card h6 {
-  font-weight: 600;
-}
-
-.Article-Card p {
-  margin-bottom: 10px;
-}
-
-.Modify-Article button {
-  background-color: #252526;
-  border-radius: 4px;
-  color: rgb(244, 178, 96);
-  padding: 3px 15px;
-  margin-right: 10px;
-  font-size: 90%;
-}
-
-.Add-Button {
-  margin-bottom: 40px;
-  margin-top: 20px;
-  background-color: #252526;
-  border-radius: 4px;
-  color: rgb(244, 178, 96);
-  padding: 3px 15px;
-  margin-right: 10px;
-  font-size: 90%;
-  font-weight: 600;
-}
-
-.Add-Container {
-  margin-top: -10px;
-}
-
-.Add {
-  background-color: #252526;
-  border-radius: 6px;
-  margin-top: 50px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  width: 600px;
-  color: #ffffff;
-  padding-left: 60px;
-  padding-right: 60px;
-  padding-bottom: 0;
-  margin-bottom: 40px;
-}
-
-.Add h1 {
-  font-family: "Open Sans", sans-serif;
-  font-size: 150%;
-  margin-top: 10px;
-  padding-bottom: 10px;
-  font-weight: 600;
-  color: rgb(244, 178, 96);
-}
-
-.Add-Form .form-control {
-  margin-bottom: 30px;
-}
-
-.Add-Form .form-label {
-  margin-bottom: 0;
-}
-
-.Add-Form button {
-  margin-right: 10px;
-}
-
-.Description {
-  height: 130px;
-}
 
 /* COLLECTIONS DETAILS */
 .CigPack-Details-Container {

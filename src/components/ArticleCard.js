@@ -2,6 +2,8 @@ import axios from "axios";
 import { useContext, useState } from "react";
 import EditArticle from "./EditArticle";
 import { AuthContext } from "../context/auth.context";
+import Swal from "sweetalert2";
+import entry from "./../images/entry.png";
 
 const apiURL = "http://localhost:5005/api/articles";
 
@@ -14,17 +16,31 @@ export default function ArticleCard(props) {
 
   //DELETE FUNCTION
   const deleteArticle = () => {
-    const storedToken = localStorage.getItem("authToken");
-    axios
-      .delete(`${apiURL}/${props.article.id}`, {
-        headers: { Authorization: `Bearer ${storedToken}` },
-      })
-      .then(props.handleArticles)
-      .catch((err) => console.log(err));
+    Swal.fire({
+      icon: "question",
+      background: '#252526',
+      text: "Are you sure to delete?",
+      showCancelButton: true,
+      confirmButtonText: "Yes",
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        const storedToken = localStorage.getItem("authToken");
+        axios
+          .delete(`${apiURL}/${props.article.id}`, {
+            headers: { Authorization: `Bearer ${storedToken}` },
+          })
+          .then((result) => {
+            props.handleArticles();
+            Swal.fire("Removed!", "", "success");
+          })
+          .catch((err) => console.log(err));
+      }
+    });
   };
 
   return (
-    <div className="Article-Card">
+    <div className="ArticleCard">
       <a href={props.article.link} target="_blank">
         <h2>{props.article.title}</h2>
       </a>
@@ -33,7 +49,7 @@ export default function ArticleCard(props) {
 
       {/* IF THE USER IS ADMIN, SHOW ADD OPTIONS */}
       {role === "ADMIN_ROLE" && (
-        <div className="Modify-Article">
+        <div className="ModifyArticle">
           <button onClick={toggleEditForm}>EDIT</button>
           <button onClick={deleteArticle}>DELETE</button>
         </div>

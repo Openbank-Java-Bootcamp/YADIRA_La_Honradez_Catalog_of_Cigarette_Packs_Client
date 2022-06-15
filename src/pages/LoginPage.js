@@ -24,26 +24,26 @@ function LoginPage() {
     axios
       .post(`${API_URL}/api/auth/login`, requestBody)
       .then((response) => {
-        // Request to the server's endpoint `/auth/login` returns a response
-        // with the JWT string ->  response.data.authToken
         console.log("JWT token", response.data.authToken);
 
         storeToken(response.data.authToken);
         authenticateUser();
-        navigate("/"); // <== ADD
+        navigate("/");
       })
       .catch((error) => {
-        const errorDescription = error.response.data.errors[0].defaultMessage;
-        setErrorMessage(errorDescription);
+        const errorDescription = error.response.data.message;
+        if (errorDescription) setErrorMessage(errorDescription);
+        const errorDes = error.response.data.errors[0].defaultMessage;
+        if (errorDes) setErrorMessage(errorDes);
       });
   };
 
   return (
-    <div className="Signup-Container">
+    <div className="SignupContainer">
       <div className="Signup">
         <h1>LOGIN</h1>
 
-        <form className="Signup-Form" onSubmit={handleLoginSubmit}>
+        <form className="SignupForm" onSubmit={handleLoginSubmit}>
           <div className="mb-3">
             <label className="form-label">Username:</label>
             <input
@@ -66,15 +66,18 @@ function LoginPage() {
             />
           </div>
 
-          <button type="submit" className="Btn-Submit">
+          <button type="submit" className="BtnSubmit">
             Login
           </button>
         </form>
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
+        {errorMessage && (
+          <p className="error-message">
+            <span>• •&nbsp;{errorMessage} &nbsp;• •</span>
+          </p>
+        )}
 
         <p>Don't have an account yet?</p>
-        <Link className="Link-Login" to={"/signup"}>
-          {" "}
+        <Link className="LinkLogin" to={"/signup"}>
           Sign Up
         </Link>
       </div>

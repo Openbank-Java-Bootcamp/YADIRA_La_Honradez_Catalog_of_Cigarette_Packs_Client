@@ -28,9 +28,9 @@ function Navbar() {
           <div>
             <Link to="/"> LA HONRADEZ </Link>
           </div>
-          <div>
+          <div className="Auth">
             <Link to="/signup">
-              <button className="Btn-SignUp">Sign Up</button>
+              <button className="BtnSignUp">Sign Up</button>
             </Link>
             <Link to="/login">
               <button className="Btn">Login</button>

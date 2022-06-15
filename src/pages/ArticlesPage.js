@@ -31,12 +31,12 @@ export default function ArticlesPage() {
   }, []);
 
   return (
-    <div className="Article-Container">
+    <div className="ArticleContainer">
       {/* IF THE USER IS ADMIN, SHOW ADD OPTIONS */}
       {role === "ADMIN_ROLE" && (
         <>
           {!showAddForm ? (
-            <button onClick={toggleAddForm} className="Add-Button">
+            <button onClick={toggleAddForm} className="AddButton">
               ADD A NEW ARTICLE
             </button>
           ) : (

@@ -18,29 +18,27 @@ function SignupPage() {
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
-    // Create an object representing the request body
     const requestBody = { username, password, name };
 
-    // Make an axios request to the API
-    // If POST request is successful redirect to login page
-    // If the request resolves with an error, set the error message in the state
     axios
       .post(`${API_URL}/api/auth/signup`, requestBody)
       .then((response) => {
         navigate("/login");
       })
       .catch((error) => {
-        const errorDescription = error.response.data.errors[0].defaultMessage;
-        setErrorMessage(errorDescription);
+        const errorDescription = error.response.data.message;
+        if (errorDescription) setErrorMessage(errorDescription);
+        const errorDes = error.response.data.errors[0].defaultMessage;
+        if (errorDes) setErrorMessage(errorDes);
       });
   };
 
   return (
-    <div className="Signup-Container">
+    <div className="SignupContainer">
       <div className="Signup">
         <h1>SIGN UP</h1>
 
-        <form className="Signup-Form" onSubmit={handleSignupSubmit}>
+        <form className="SignupForm" onSubmit={handleSignupSubmit}>
           <div className="mb-3">
             <label className="form-label">Username:</label>
             <input
@@ -73,15 +71,16 @@ function SignupPage() {
               onChange={handleName}
             />
           </div>
-          <button type="submit" className="Btn-Submit">
+          <button type="submit" className="BtnSubmit">
             Sign Up
           </button>
         </form>
 
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
+        {errorMessage && <p className="error-message"><span>• •&nbsp;{errorMessage} &nbsp;• •</span></p>}
 
+        
         <p>Already have account?</p>
-        <Link className="Link-Login" to={"/login"}>
+        <Link className="LinkLogin" to={"/login"}>
           Login
         </Link>
       </div>
