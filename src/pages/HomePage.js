@@ -77,7 +77,7 @@ export default function HomePage() {
       </div>
 
       {/* BODY */}
-      <div>
+      <div className="BodyContain">
         {/* TEXT-SECTIONS */}
         <div className="TextCards">
           <div className="ImageTitleContainer">

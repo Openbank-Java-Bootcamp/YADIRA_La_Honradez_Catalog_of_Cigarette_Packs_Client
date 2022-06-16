@@ -16,6 +16,7 @@ code {
 .App {
   text-align: center;
   min-height: 100vh;
+  background-color: antiquewhite;
 }
 /* ========================== HOME PAGE ============================= */
 .HomeHeader {
@@ -98,6 +99,12 @@ margin-bottom: 3px;
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+}
+
+.BodyContain {
+  background-color: #ffffff;
+  margin-top: -30px;
+  padding-top: 20px;
 }
 
 .ImageTextCard {
@@ -192,7 +199,7 @@ color: white;
 .SignupContainer {
   display: flex;
   justify-content: center;
-  margin-top: 60px;
+  margin-top: 51px;
 }
 
 .Signup {
@@ -253,7 +260,6 @@ color: white;
   padding-left: 40px;
   padding-right: 40px;
   padding-bottom: 40px;
-  background-color: rgb(244, 178, 96);
   text-align: left;
   margin-bottom: 0;
   font-family: "Open Sans", sans-serif;
@@ -366,61 +372,37 @@ color: white;
 }
 
 .Filter {
-  padding-top: 20px;
-  padding-bottom: 10px;
+  padding-top: 13px;
   padding-bottom: 20px;
-  width: 37%;
   text-align: left;
   margin-right: 20px;
+  width: 40%;
 }
 
 .Filter h3 {
   margin-top: 10px;
-  font-size: 100%;
+  font-size: 90%;
   font-weight: 700;
   margin-bottom: 7px;
 }
 
-.ShowAll {
-  width: 26%;
-  background-color: white;
-  margin-top: 55px;
-  margin-bottom: 19px;
-  border-radius: 6px;
-  font-weight: 700;
-  font-size: 90%;
-  border: 1px solid #ced4da;
-}
-
-.ContainAddButton {
-  display: flex;
-  justify-content: left;
-  width: 100%;
-  background-color: rgb(244, 178, 96);
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 20px;
-  position: fixed;
-  margin-top: 150px;
-  z-index: 90;
-
-}
-
 .BtnAddCigPack {
   padding: 4px 15px;
-  font-size: 1rem;
-  border-radius: 4px;
   background-color: #252526;
   font-weight: 600;
   font-size: 14px;
   font-family: "Open Sans", sans-serif;
-  width: 100%;
+  margin-top: 47px;
+  padding-right: 20px;
+  margin-bottom: 19px;
+  border-radius: 6px;
+  font-size: 90%;
+  width: 20%;
 }
 
 .BtnAddCigPack a {
   color: rgb(244, 178, 96);
   text-decoration: none;
-  font-size: 120%;
 }
 
 .BtnAddCigPack a:hover {
@@ -429,13 +411,14 @@ color: white;
 
 /* -------------------------------- ALL CIGARETTE PACKS -------------------------------- */
 .CigPackContainer {
-  padding-top: 220px;
+  padding-top: 170px;
   padding-left: 40px;
   padding-right: 40px;
 }
 
 .CigarettePackCard {
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .CigPackImageContainer {
@@ -466,7 +449,7 @@ color: white;
 }
 
 .Data {
-  margin-bottom: 70px;
+  margin-bottom: 30px;
   align-content: center;
 }
 

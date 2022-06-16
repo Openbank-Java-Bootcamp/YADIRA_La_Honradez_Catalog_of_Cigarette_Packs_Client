@@ -96,17 +96,12 @@ export default function CollectionsPage() {
           <TopicFilter handleChange={(e) => setTopic(e.target.value)} />
         </div>
 
-        {/* SHOW ALL */}
-        <button onClick={getAllCigarettePacks} className="ShowAll">
-          SHOW ALL
-        </button>
-      </div>
-
-      <div className="ContainAddButton">
         {/* IF THE USER IS ADMIN, SHOW ADD OPTION */}
         {role === "ADMIN_ROLE" && (
           <button className="BtnAddCigPack">
-            <Link to="/collections/addCigPack">• • • &nbsp;ADD A CIGARETTE PACK&nbsp; • • • </Link>
+            <Link to="/collections/addCigPack">
+             ADD A CIGARETTE PACK
+            </Link>
           </button>
         )}
       </div>
