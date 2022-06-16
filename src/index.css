@@ -519,7 +519,7 @@ color: white;
 
 .CigPackDetailsImage {
   margin-top: 90px;
-  margin-left: 40px;
+  margin-left: 140px;
   width: 500px;
   margin-bottom: 20px;
 }
@@ -555,13 +555,7 @@ color: white;
 }
 
 .ButtonsDetails {
-  margin-top: 5px;
   display: flex;
-}
-
-.ButtonsDetails button {
-  margin-right: 10px;
-  border-color: #252526;
 }
 
 /* -------------------------------- EDIT CIGARETTE PACK -------------------------------- */
@@ -572,7 +566,7 @@ color: white;
 .EditCigPack {
   width: 300px;
   background-color: #252526;
-  margin-left: 40px;
+  margin-left: 140px;
   border-radius: 6px;
   margin-top: 50px;
   padding-top: 20px;
@@ -598,4 +592,17 @@ color: white;
 .EditCigPackContainer ul {
   margin-left: -30px;
   margin-top: 8px;
+}
+
+.BtnEdit {
+padding: 4px 15px;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 4px;
+  background-color: rgb(244, 178, 96);
+  font-weight: 600;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  margin-top: 20px;
+  margin-right: 10px;
 }

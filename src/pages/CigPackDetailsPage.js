@@ -111,19 +111,21 @@ export default function CigPackDetailsPage() {
                     </p>
                   ))}
                 </div>
-                {role === "ADMIN_ROLE" && (
-                  <div className="ButtonsDetails">
-                    <button onClick={toggleEditForm} className="BtnSubmit">
-                      EDIT
-                    </button>
-                    <button onClick={deleteCigPack} className="BtnSubmit">
-                      DELETE
-                    </button>
-                    <Link to="/collections">
-                      <button className="BtnSubmit">BACK TO COLLECTION</button>
-                    </Link>
-                  </div>
-                )}
+                <div className="ButtonsDetails">
+                  <Link to="/collections">
+                    <button className="BtnEdit">BACK</button>
+                  </Link>
+                  {role === "ADMIN_ROLE" && (
+                    <div>
+                      <button onClick={toggleEditForm} className="BtnEdit">
+                        EDIT
+                      </button>
+                      <button onClick={deleteCigPack} className="BtnEdit">
+                        DELETE
+                      </button>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </>
