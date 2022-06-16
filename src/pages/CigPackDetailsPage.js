@@ -70,7 +70,7 @@ export default function CigPackDetailsPage() {
   };
 
   return (
-    <div>
+    <div className="DetailsBody">
       <div>
         {cigarettePack ? (
           <>
@@ -84,8 +84,8 @@ export default function CigPackDetailsPage() {
                     },
                     largeImage: {
                       src: `data:image/png;base64,${link}`,
-                      width: 1200,
-                      height: 867,
+                      width: 1500,
+                      height: 1083,
                     },
                   }}
                 />

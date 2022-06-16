@@ -91,7 +91,7 @@ margin-bottom: 3px;
 
 .Video {
   background-color: black;
-  padding-top: 60px;
+  padding-top: 30px;
   padding-bottom: 60px;
 }
 
@@ -480,7 +480,7 @@ color: white;
   margin-top: 50px;
   padding-top: 20px;
   padding-bottom: 20px;
-  width: 400px;
+  width: 600px;
   color: #ffffff;
   padding-left: 60px;
   padding-right: 60px;
@@ -508,6 +508,10 @@ color: white;
 }
 
 /* -------------------------------- CIGARETTE PACKS DETAILS -------------------------------- */
+.DetailsBody {
+  padding-bottom: 20px;
+}
+
 .CigPackDetailsContainer {
   display: flex;
   margin: 0 auto;
@@ -516,13 +520,13 @@ color: white;
 .CigPackDetailsImage {
   margin-top: 90px;
   margin-left: 40px;
-  width: 400px;
+  width: 500px;
   margin-bottom: 20px;
 }
 
 .CigPackDetailsData {
   margin-top: 84px;
-  width: 420px;
+  width: 520px;
   padding-left: 20px;
   text-align: left;
 }
@@ -573,7 +577,7 @@ color: white;
   margin-top: 50px;
   padding-top: 20px;
   padding-bottom: 20px;
-  width: 400px;
+  width: 500px;
   color: #ffffff;
   padding-left: 60px;
   padding-right: 60px;
