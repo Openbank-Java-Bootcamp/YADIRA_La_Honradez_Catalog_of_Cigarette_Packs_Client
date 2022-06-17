@@ -39,7 +39,7 @@ And the last page is Articles, where the same occurs, only the administrator has
 
 ![article_edited_edited](https://user-images.githubusercontent.com/100872227/174093242-75d430ad-09a4-4b15-b234-2dc8ef263744.jpg)
 
-## Pages and Components         
+## Pages --> Components         
 1. All pages --> Navbar
 2. SignUpPage
 3. LoginPage
