@@ -39,7 +39,15 @@ And the last page is Articles, where the same occurs, only the administrator has
 
 ![article_edited_edited](https://user-images.githubusercontent.com/100872227/174093242-75d430ad-09a4-4b15-b234-2dc8ef263744.jpg)
 
-## Components and Pages structure
+## Pages and Components         
+1. All pages --> Navbar
+2. SignUpPage
+3. LoginPage
+4. HomePage
+5. CollectionPage --> SerieFilter, TopicFilter, CigPackCard, AddCigPackCard
+6. CigPackDetailsPage --> CigPackDetailsCard, EditCigPack
+7. ArticlesPage --> ArticleCard, AddArticle, EditArticle
+
 SignUpPage:
 
 ![SignUpPage](https://user-images.githubusercontent.com/100872227/174095715-78767fb4-c0c6-4756-83f9-594dc060448d.jpg)
@@ -64,7 +72,7 @@ The option of ADD A CIGARETTE PACK only is showed if the user is admin. It uses 
 
 ![AddCigPack](https://user-images.githubusercontent.com/100872227/174127742-8ac16a69-9f93-483d-82e1-8d9ba94f0931.jpg)
 
-CigPackDetails. This page uses the component CigPackDetailsCard.
+CigPackDetailsPage. This page uses the component CigPackDetailsCard.
 
 ![CigPackDetails](https://user-images.githubusercontent.com/100872227/174114327-8d7be5e8-d272-4be7-bc16-139b2ce5c92e.jpg)
  
