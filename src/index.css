@@ -311,10 +311,10 @@ color: white;
 .Add {
   background-color: #252526;
   border-radius: 6px;
-  margin-top: 50px;
+  margin-top: 30px;
   padding-top: 20px;
   padding-bottom: 20px;
-  width: 400px;
+  width: 500px;
   color: #ffffff;
   padding-left: 30px;
   padding-right: 30px;
@@ -467,9 +467,15 @@ color: white;
   color: rgb(84, 82, 82);
 }
 
+.Loading {
+  padding-top: 120px;
+}
+
 /* -------------------------------- ADD CIGARETTE PACKS -------------------------------- */
 .AddCigPackContainer {
-  margin-top: 90px;
+  margin-top: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .AddCigPack {

@@ -10,6 +10,7 @@ const apiURL = "http://localhost:5005/api/cigarette_packs";
 
 export default function CollectionsPage() {
   const { role } = useContext(AuthContext);
+  const [loading, setLoading] = useState(true);
   const [cigarettePacks, setCigarettePacks] = useState([]);
   const [serie, setSerie] = useState("");
   const [topic, setTopic] = useState("");
@@ -23,7 +24,8 @@ export default function CollectionsPage() {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => setCigarettePacks(response.data))
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error))
+      .finally(() => setLoading(false));
   };
 
   useEffect(() => {
@@ -32,6 +34,8 @@ export default function CollectionsPage() {
 
   //FILTERS
   const filterCigPacks = () => {
+    setLoading(true);
+    setCigarettePacks([]);
     //Return all cigarette packs
     if (serie === "" && topic === "") {
       getAllCigarettePacks();
@@ -47,7 +51,8 @@ export default function CollectionsPage() {
         .then((response) => {
           setCigarettePacks(response.data);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => console.log(error))
+        .finally(() => setLoading(false));
     }
 
     //Filter by Topic
@@ -60,7 +65,8 @@ export default function CollectionsPage() {
         .then((reponse) => {
           setCigarettePacks(reponse.data);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => console.log(error))
+        .finally(() => setLoading(false));
     }
 
     //Filter by Serie and Topic
@@ -73,7 +79,8 @@ export default function CollectionsPage() {
         .then((reponse) => {
           setCigarettePacks(reponse.data);
         })
-        .catch((error) => console.log(error));
+        .catch((error) => console.log(error))
+        .finally(() => setLoading(false));
     }
   };
 
@@ -99,14 +106,19 @@ export default function CollectionsPage() {
         {/* IF THE USER IS ADMIN, SHOW ADD OPTION */}
         {role === "ADMIN_ROLE" && (
           <button className="BtnAddCigPack">
-            <Link to="/collections/addCigPack">
-             ADD A CIGARETTE PACK
-            </Link>
+            <Link to="/collections/addCigPack">ADD A CIGARETTE PACK</Link>
           </button>
         )}
       </div>
 
       <div className="CigPackContainer">
+        {loading && (
+          <iframe
+            src="https://giphy.com/embed/xTkcEQACH24SMPxIQg"
+            className="Loading"
+          ></iframe>
+        )}
+
         <div className="row">
           {cigarettePacks.map((cigarettePack) => (
             <CigarettePackCard

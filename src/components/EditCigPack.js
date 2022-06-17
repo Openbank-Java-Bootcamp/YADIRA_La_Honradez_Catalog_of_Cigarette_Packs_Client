@@ -48,7 +48,6 @@ export default function EditCigPack(props) {
 
   const _handleReaderLoaded = (readerEvt) => {
     let binaryString = readerEvt.target.result;
-    console.log(binaryString);
     setLink(btoa(binaryString));
   };
 
@@ -74,7 +73,6 @@ export default function EditCigPack(props) {
     } else {
       checked = "";
     }
-    console.log(checked);
     return checked;
   };
 
@@ -84,7 +82,6 @@ export default function EditCigPack(props) {
 
     const requestBody = { title, description, link, serieName, topics };
     const storedToken = localStorage.getItem("authToken");
-    console.log(requestBody);
 
     axios
       .put(`${apiURL}/cigarette_packs/${props.cigPack.id}`, requestBody, {

@@ -51,7 +51,6 @@ export default function AddCigPack(props) {
 
   const _handleReaderLoaded = (readerEvt) => {
     let binaryString = readerEvt.target.result;
-    console.log(binaryString);
     setLink(btoa(binaryString));
   };
 
@@ -75,7 +74,6 @@ export default function AddCigPack(props) {
 
     const requestBody = { title, description, link, serieName, topics };
     const storedToken = localStorage.getItem("authToken");
-    console.log(requestBody);
 
     axios
       .post(`${apiURL}/cigarette_packs`, requestBody, {
